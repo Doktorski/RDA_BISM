@@ -1,0 +1,757 @@
+{
+  "name": "RDA_BISM_DEV",
+  "compatibilityLevel": 1200,
+  "model": {
+    "culture": "en-US",
+    "dataSources": [
+      {
+        "name": "SqlServer DELLMAMBA_17 RDA_DW",
+        "connectionString": "Provider=SQLNCLI11;Data Source=DELL\\MAMBA_17;Persist Security Info=false;User ID=sa;Initial Catalog=RDA_DW;Integrated Security=SSPI",
+        "impersonationMode": "impersonateAccount",
+        "account": ".\\Aleksandar T",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "name": "Agencija",
+        "columns": [
+          {
+            "name": "Agencija Key",
+            "dataType": "int64",
+            "sourceColumn": "Agencija Key",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Naziv Agencije",
+            "dataType": "string",
+            "sourceColumn": "Naziv Agencije",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Sediste Agencije",
+            "dataType": "string",
+            "sourceColumn": "Sediste Agencije",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Adresa Agencije",
+            "dataType": "string",
+            "sourceColumn": "Adresa Agencije",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Telefon Agencije",
+            "dataType": "string",
+            "sourceColumn": "Telefon Agencije",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "E-mail Agencije",
+            "dataType": "string",
+            "sourceColumn": "E-mail Agencije",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Agencija",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[Agencija].* FROM [dbo].[Agencija] ",
+              "dataSource": "SqlServer DELLMAMBA_17 RDA_DW"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[Agencija].* FROM [dbo].[Agencija] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Agencija"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Datum",
+        "columns": [
+          {
+            "name": "Date Key",
+            "dataType": "int64",
+            "sourceColumn": "Date Key",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Datum Sa Vremenom",
+            "dataType": "dateTime",
+            "sourceColumn": "Datum Sa Vremenom",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "Datum Tip1",
+            "dataType": "string",
+            "sourceColumn": "Datum Tip1",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Datum Tip2",
+            "dataType": "string",
+            "sourceColumn": "Datum Tip2",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Dan U Mesecu",
+            "dataType": "string",
+            "sourceColumn": "Dan U Mesecu",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Ime Dana Cirilica",
+            "dataType": "string",
+            "sourceColumn": "Ime Dana Cirilica",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Ime Dana Latinica",
+            "dataType": "string",
+            "sourceColumn": "Ime Dana Latinica",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Dan U Sedmici",
+            "dataType": "string",
+            "sourceColumn": "Dan U Sedmici",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Nedelja U Godini",
+            "dataType": "string",
+            "sourceColumn": "Nedelja U Godini",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Mesec",
+            "dataType": "string",
+            "sourceColumn": "Mesec",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Ime Meseca Cirilica",
+            "dataType": "string",
+            "sourceColumn": "Ime Meseca Cirilica",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Ime Meseca Latinica",
+            "dataType": "string",
+            "sourceColumn": "Ime Meseca Latinica",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Kvartal",
+            "dataType": "string",
+            "sourceColumn": "Kvartal",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Ime Kvartala Cirilica",
+            "dataType": "string",
+            "sourceColumn": "Ime Kvartala Cirilica",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Ime Kvartala Latinica",
+            "dataType": "string",
+            "sourceColumn": "Ime Kvartala Latinica",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Godina",
+            "dataType": "string",
+            "sourceColumn": "Godina",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Mesec Godina",
+            "dataType": "string",
+            "sourceColumn": "Mesec Godina",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Mesec Godina Skraceno",
+            "dataType": "string",
+            "sourceColumn": "Mesec Godina Skraceno",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Datum",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[Datum].* FROM [dbo].[Datum] ",
+              "dataSource": "SqlServer DELLMAMBA_17 RDA_DW"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[Datum].* FROM [dbo].[Datum] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Datum"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Grad",
+        "columns": [
+          {
+            "name": "Grad Key",
+            "dataType": "int64",
+            "sourceColumn": "Grad Key",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Naziv Grada",
+            "dataType": "string",
+            "sourceColumn": "Naziv Grada",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Naziv Regiona",
+            "dataType": "string",
+            "sourceColumn": "Naziv Regiona",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Grad",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[Grad].* FROM [dbo].[Grad] ",
+              "dataSource": "SqlServer DELLMAMBA_17 RDA_DW"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[Grad].* FROM [dbo].[Grad] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Grad"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Kompanija",
+        "columns": [
+          {
+            "name": "Kompanija Key",
+            "dataType": "int64",
+            "sourceColumn": "Kompanija Key",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Naziv Kompanija",
+            "dataType": "string",
+            "sourceColumn": "Naziv Kompanija",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Sediste Kompanije",
+            "dataType": "string",
+            "sourceColumn": "Sediste Kompanije",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Sifra Kompanije",
+            "dataType": "string",
+            "sourceColumn": "Sifra Kompanije",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Kompanija",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[Kompanija].* FROM [dbo].[Kompanija] ",
+              "dataSource": "SqlServer DELLMAMBA_17 RDA_DW"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[Kompanija].* FROM [dbo].[Kompanija] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Kompanija"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Narudzbenica",
+        "columns": [
+          {
+            "name": "Narudzbenice Key",
+            "dataType": "int64",
+            "sourceColumn": "Narudzbenice Key",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Zaposleni Key",
+            "dataType": "int64",
+            "sourceColumn": "Zaposleni Key",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Odbor Key",
+            "dataType": "int64",
+            "sourceColumn": "Odbor Key",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Grad Key",
+            "dataType": "int64",
+            "sourceColumn": "Grad Key",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Vreme Prikazivanja Key",
+            "dataType": "int64",
+            "sourceColumn": "Vreme Prikazivanja Key",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Kompanija Key",
+            "dataType": "int64",
+            "sourceColumn": "Kompanija Key",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Broj Narudzbenica",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "Broj Narudzbenica",
+            "formatString": "0",
+            "sourceProviderType": "Integer",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Pocetak Termina",
+            "dataType": "dateTime",
+            "sourceColumn": "Pocetak Termina",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "Zavrsetak Termina",
+            "dataType": "dateTime",
+            "sourceColumn": "Zavrsetak Termina",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Narudzbenica",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[Narudzbenica].* FROM [dbo].[Narudzbenica] ",
+              "dataSource": "SqlServer DELLMAMBA_17 RDA_DW"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "BrojNarudzbina",
+            "expression": "CALCULATE(SUM(Narudzbenica[Broj Narudzbenica]))",
+            "formatString": "#,###"
+          },
+          {
+            "name": "BrojNarudzbenica",
+            "expression": "COUNT( Narudzbenica[Broj Narudzbenica] )",
+            "formatString": "#,0"
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[Narudzbenica].* FROM [dbo].[Narudzbenica] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Narudzbenica"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Odbor",
+        "columns": [
+          {
+            "name": "Odbor Key",
+            "dataType": "int64",
+            "sourceColumn": "Odbor Key",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Naziv Odbora",
+            "dataType": "string",
+            "sourceColumn": "Naziv Odbora",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Naziv Politicke Stranke",
+            "dataType": "string",
+            "sourceColumn": "Naziv Politicke Stranke",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Naziv Opstine",
+            "dataType": "string",
+            "sourceColumn": "Naziv Opstine",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Odbor",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[Odbor].* FROM [dbo].[Odbor] ",
+              "dataSource": "SqlServer DELLMAMBA_17 RDA_DW"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[Odbor].* FROM [dbo].[Odbor] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Odbor"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "PrivrednaGrana",
+        "columns": [
+          {
+            "name": "Privredna Grana Key",
+            "dataType": "int64",
+            "sourceColumn": "Privredna Grana Key",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Naziv Privredne Grane",
+            "dataType": "string",
+            "sourceColumn": "Naziv Privredne Grane",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "PrivrednaGrana",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[PrivrednaGrana].* FROM [dbo].[PrivrednaGrana] ",
+              "dataSource": "SqlServer DELLMAMBA_17 RDA_DW"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[PrivrednaGrana].* FROM [dbo].[PrivrednaGrana] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "PrivrednaGrana"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Reklama",
+        "columns": [
+          {
+            "name": "Reklama Key",
+            "dataType": "int64",
+            "sourceColumn": "Reklama Key",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "TV Kanali Key",
+            "dataType": "int64",
+            "sourceColumn": "TV Kanali Key",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Privredna GranaKey",
+            "dataType": "int64",
+            "sourceColumn": "Privredna GranaKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Agencija Key",
+            "dataType": "int64",
+            "sourceColumn": "Agencija Key",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Odbor Key",
+            "dataType": "int64",
+            "sourceColumn": "Odbor Key",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Grad Key",
+            "dataType": "int64",
+            "sourceColumn": "Grad Key",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Vreme Prikazivanja Key",
+            "dataType": "int64",
+            "sourceColumn": "Vreme Prikazivanja Key",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Kompanija Key",
+            "dataType": "int64",
+            "sourceColumn": "Kompanija Key",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Broj Prikaza",
+            "dataType": "int64",
+            "sourceColumn": "Broj Prikaza",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Trajanje Reklame",
+            "dataType": "int64",
+            "sourceColumn": "Trajanje Reklame",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Cena Reklame",
+            "dataType": "int64",
+            "sourceColumn": "Cena Reklame",
+            "sourceProviderType": "Integer"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Reklama",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[Reklama].* FROM [dbo].[Reklama] ",
+              "dataSource": "SqlServer DELLMAMBA_17 RDA_DW"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[Reklama].* FROM [dbo].[Reklama] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Reklama"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "TvKanali",
+        "columns": [
+          {
+            "name": "TV Kanali Key",
+            "dataType": "int64",
+            "sourceColumn": "TV Kanali Key",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Naziv Kanala",
+            "dataType": "string",
+            "sourceColumn": "Naziv Kanala",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "TV Kuca",
+            "dataType": "string",
+            "sourceColumn": "TV Kuca",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Sediste TV Kuce",
+            "dataType": "string",
+            "sourceColumn": "Sediste TV Kuce",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": " Adresa TV Kuce",
+            "dataType": "string",
+            "sourceColumn": " Adresa TV Kuce",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "E-mail TV Kuce",
+            "dataType": "string",
+            "sourceColumn": "E-mail TV Kuce",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Teleon TV Kuce",
+            "dataType": "string",
+            "sourceColumn": "Teleon TV Kuce",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Vrsta Vlasnistva",
+            "dataType": "string",
+            "sourceColumn": "Vrsta Vlasnistva",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "TvKanali",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[TvKanali].* FROM [dbo].[TvKanali] ",
+              "dataSource": "SqlServer DELLMAMBA_17 RDA_DW"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[TvKanali].* FROM [dbo].[TvKanali] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "TvKanali"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Zaposleni",
+        "columns": [
+          {
+            "name": "Zaposleni Key",
+            "dataType": "int64",
+            "sourceColumn": "Zaposleni Key",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Ime Zaposlenog",
+            "dataType": "string",
+            "sourceColumn": "Ime Zaposlenog",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Prezime Zaposlenog",
+            "dataType": "string",
+            "sourceColumn": "Prezime Zaposlenog",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "JMBG Zaposlenog",
+            "dataType": "string",
+            "sourceColumn": "JMBG Zaposlenog",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Pozicija Zaposlenog",
+            "dataType": "string",
+            "sourceColumn": "Pozicija Zaposlenog",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Zaposleni",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[Zaposleni].* FROM [dbo].[Zaposleni] ",
+              "dataSource": "SqlServer DELLMAMBA_17 RDA_DW"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[Zaposleni].* FROM [dbo].[Zaposleni] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Zaposleni"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "400"
+      }
+    ]
+  }
+}
