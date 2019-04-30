@@ -747,12 +747,14 @@
           {
             "name": "Ime Zaposlenog",
             "dataType": "string",
+            "isHidden": true,
             "sourceColumn": "Ime Zaposlenog",
             "sourceProviderType": "WChar"
           },
           {
             "name": "Prezime Zaposlenog",
             "dataType": "string",
+            "isHidden": true,
             "sourceColumn": "Prezime Zaposlenog",
             "sourceProviderType": "WChar"
           },
@@ -767,6 +769,13 @@
             "dataType": "string",
             "sourceColumn": "Pozicija Zaposlenog",
             "sourceProviderType": "WChar"
+          },
+          {
+            "type": "calculated",
+            "name": "Zaposleni",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": " CONCATENATE('Zaposleni'[Ime Zaposlenog],CONCATENATE( \" \", 'Zaposleni'[Prezime Zaposlenog]) )"
           }
         ],
         "partitions": [
