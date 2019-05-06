@@ -24,6 +24,7 @@
           {
             "name": "Agencija Key",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Agencija Key",
             "sourceProviderType": "Integer"
           },
@@ -63,6 +64,7 @@
             "name": "Agencija",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[Agencija].* FROM [dbo].[Agencija] ",
               "dataSource": "SqlServer DELLMAMBA_17 RDA_DW"
             }
@@ -89,6 +91,7 @@
           {
             "name": "Date Key",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Date Key",
             "sourceProviderType": "Integer"
           },
@@ -201,6 +204,7 @@
             "name": "Datum",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[Datum].* FROM [dbo].[Datum] ",
               "dataSource": "SqlServer DELLMAMBA_17 RDA_DW"
             }
@@ -227,6 +231,7 @@
           {
             "name": "Grad Key",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Grad Key",
             "sourceProviderType": "Integer"
           },
@@ -248,6 +253,7 @@
             "name": "Grad",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[Grad].* FROM [dbo].[Grad] ",
               "dataSource": "SqlServer DELLMAMBA_17 RDA_DW"
             }
@@ -274,6 +280,7 @@
           {
             "name": "Kompanija Key",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Kompanija Key",
             "sourceProviderType": "Integer"
           },
@@ -301,6 +308,7 @@
             "name": "Kompanija",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[Kompanija].* FROM [dbo].[Kompanija] ",
               "dataSource": "SqlServer DELLMAMBA_17 RDA_DW"
             }
@@ -327,36 +335,42 @@
           {
             "name": "Narudzbenice Key",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Narudzbenice Key",
             "sourceProviderType": "Integer"
           },
           {
             "name": "Zaposleni Key",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Zaposleni Key",
             "sourceProviderType": "Integer"
           },
           {
             "name": "Odbor Key",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Odbor Key",
             "sourceProviderType": "Integer"
           },
           {
             "name": "Grad Key",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Grad Key",
             "sourceProviderType": "Integer"
           },
           {
             "name": "Vreme Prikazivanja Key",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Vreme Prikazivanja Key",
             "sourceProviderType": "Integer"
           },
           {
             "name": "Kompanija Key",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Kompanija Key",
             "sourceProviderType": "Integer"
           },
@@ -389,6 +403,7 @@
             "name": "Narudzbenica",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[Narudzbenica].* FROM [dbo].[Narudzbenica] ",
               "dataSource": "SqlServer DELLMAMBA_17 RDA_DW"
             }
@@ -396,13 +411,13 @@
         ],
         "measures": [
           {
-            "name": "BrojNarudzbina",
-            "expression": "CALCULATE(SUM(Narudzbenica[Broj Narudzbenica]))",
+            "name": "BrojNarudzbinaSveNedelje",
+            "expression": "CALCULATE(SUM(Narudzbenica[Broj Narudzbenica]), ALL(Datum[Nedelja U Godini]))",
             "formatString": "#,###"
           },
           {
-            "name": "BrojNarudzbenica",
-            "expression": "COUNT( Narudzbenica[Broj Narudzbenica] )",
+            "name": "BrojNarudzbinaPoNedelji",
+            "expression": "CALCULATE(SUM(Narudzbenica[Broj Narudzbenica]), FILTER(Datum, Datum[Nedelja U Godini]))",
             "formatString": "#,0"
           }
         ],
@@ -427,6 +442,7 @@
           {
             "name": "Odbor Key",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Odbor Key",
             "sourceProviderType": "Integer"
           },
@@ -454,6 +470,7 @@
             "name": "Odbor",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[Odbor].* FROM [dbo].[Odbor] ",
               "dataSource": "SqlServer DELLMAMBA_17 RDA_DW"
             }
@@ -480,6 +497,7 @@
           {
             "name": "Privredna Grana Key",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Privredna Grana Key",
             "sourceProviderType": "Integer"
           },
@@ -495,6 +513,7 @@
             "name": "PrivrednaGrana",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[PrivrednaGrana].* FROM [dbo].[PrivrednaGrana] ",
               "dataSource": "SqlServer DELLMAMBA_17 RDA_DW"
             }
@@ -521,48 +540,56 @@
           {
             "name": "Reklama Key",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Reklama Key",
             "sourceProviderType": "Integer"
           },
           {
             "name": "TV Kanali Key",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "TV Kanali Key",
             "sourceProviderType": "Integer"
           },
           {
             "name": "Privredna GranaKey",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Privredna GranaKey",
             "sourceProviderType": "Integer"
           },
           {
             "name": "Agencija Key",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Agencija Key",
             "sourceProviderType": "Integer"
           },
           {
             "name": "Odbor Key",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Odbor Key",
             "sourceProviderType": "Integer"
           },
           {
             "name": "Grad Key",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Grad Key",
             "sourceProviderType": "Integer"
           },
           {
             "name": "Vreme Prikazivanja Key",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Vreme Prikazivanja Key",
             "sourceProviderType": "Integer"
           },
           {
             "name": "Kompanija Key",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Kompanija Key",
             "sourceProviderType": "Integer"
           },
@@ -590,9 +617,27 @@
             "name": "Reklama",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[Reklama].* FROM [dbo].[Reklama] ",
               "dataSource": "SqlServer DELLMAMBA_17 RDA_DW"
             }
+          }
+        ],
+        "measures": [
+          {
+            "name": "ProdajaReklama",
+            "expression": "CALCULATE(SUM(Reklama[Cena Reklame]), ALL(Datum[Nedelja U Godini]))",
+            "formatString": "#,0.00"
+          },
+          {
+            "name": "ProdajaReklamaPoNedelji",
+            "expression": "CALCULATE(SUM(Reklama[Cena Reklame]), FILTER(Datum, Datum[Nedelja U Godini] ))",
+            "formatString": "#,0.00"
+          },
+          {
+            "name": "ProdajaReklamaPoKvartalu",
+            "expression": "CALCULATE(SUM(Reklama[Cena Reklame]), FILTER(Datum, Datum[Kvartal]))",
+            "formatString": "0.00"
           }
         ],
         "annotations": [
@@ -616,6 +661,7 @@
           {
             "name": "TV Kanali Key",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "TV Kanali Key",
             "sourceProviderType": "Integer"
           },
@@ -667,6 +713,7 @@
             "name": "TvKanali",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[TvKanali].* FROM [dbo].[TvKanali] ",
               "dataSource": "SqlServer DELLMAMBA_17 RDA_DW"
             }
@@ -693,18 +740,21 @@
           {
             "name": "Zaposleni Key",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Zaposleni Key",
             "sourceProviderType": "Integer"
           },
           {
             "name": "Ime Zaposlenog",
             "dataType": "string",
+            "isHidden": true,
             "sourceColumn": "Ime Zaposlenog",
             "sourceProviderType": "WChar"
           },
           {
             "name": "Prezime Zaposlenog",
             "dataType": "string",
+            "isHidden": true,
             "sourceColumn": "Prezime Zaposlenog",
             "sourceProviderType": "WChar"
           },
@@ -719,6 +769,13 @@
             "dataType": "string",
             "sourceColumn": "Pozicija Zaposlenog",
             "sourceProviderType": "WChar"
+          },
+          {
+            "type": "calculated",
+            "name": "Zaposleni",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": " CONCATENATE('Zaposleni'[Ime Zaposlenog],CONCATENATE( \" \", 'Zaposleni'[Prezime Zaposlenog]) )"
           }
         ],
         "partitions": [
@@ -726,6 +783,7 @@
             "name": "Zaposleni",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[Zaposleni].* FROM [dbo].[Zaposleni] ",
               "dataSource": "SqlServer DELLMAMBA_17 RDA_DW"
             }
@@ -745,6 +803,85 @@
             "value": "dbo"
           }
         ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "d49d0c69-bde5-466c-ba99-f031ea809f10",
+        "fromTable": "Reklama",
+        "fromColumn": "TV Kanali Key",
+        "toTable": "TvKanali",
+        "toColumn": "TV Kanali Key"
+      },
+      {
+        "name": "163e26b2-7ad6-485f-9576-c59d3874649e",
+        "fromTable": "Reklama",
+        "fromColumn": "Privredna GranaKey",
+        "toTable": "PrivrednaGrana",
+        "toColumn": "Privredna Grana Key"
+      },
+      {
+        "name": "77f9d434-a3eb-4b26-a7fb-7b7216fc2e0e",
+        "fromTable": "Reklama",
+        "fromColumn": "Odbor Key",
+        "toTable": "Odbor",
+        "toColumn": "Odbor Key"
+      },
+      {
+        "name": "3851bc6c-68e7-4aff-a400-452a6adab6df",
+        "fromTable": "Reklama",
+        "fromColumn": "Kompanija Key",
+        "toTable": "Kompanija",
+        "toColumn": "Kompanija Key"
+      },
+      {
+        "name": "2d627d40-d1b4-467f-9eb6-ffed1724edb9",
+        "fromTable": "Reklama",
+        "fromColumn": "Grad Key",
+        "toTable": "Grad",
+        "toColumn": "Grad Key"
+      },
+      {
+        "name": "41bda306-91f5-4253-9b59-44148fb18b27",
+        "fromTable": "Narudzbenica",
+        "fromColumn": "Zaposleni Key",
+        "toTable": "Zaposleni",
+        "toColumn": "Zaposleni Key"
+      },
+      {
+        "name": "4d9452ae-2aea-47e0-825f-03545b8ba15a",
+        "fromTable": "Narudzbenica",
+        "fromColumn": "Odbor Key",
+        "toTable": "Odbor",
+        "toColumn": "Odbor Key"
+      },
+      {
+        "name": "b9ece0ea-5f07-4715-8206-d999759c01cc",
+        "fromTable": "Narudzbenica",
+        "fromColumn": "Vreme Prikazivanja Key",
+        "toTable": "Datum",
+        "toColumn": "Date Key"
+      },
+      {
+        "name": "e2a2e756-9f4f-4fd6-aa15-f6176fa62165",
+        "fromTable": "Narudzbenica",
+        "fromColumn": "Kompanija Key",
+        "toTable": "Kompanija",
+        "toColumn": "Kompanija Key"
+      },
+      {
+        "name": "ecbf50ef-f0ba-4e1c-a181-31cc22257bfa",
+        "fromTable": "Reklama",
+        "fromColumn": "Vreme Prikazivanja Key",
+        "toTable": "Datum",
+        "toColumn": "Date Key"
+      },
+      {
+        "name": "353771c1-6f36-407c-a2ed-3a64f1b662dd",
+        "fromTable": "Reklama",
+        "fromColumn": "Agencija Key",
+        "toTable": "Agencija",
+        "toColumn": "Agencija Key"
       }
     ],
     "annotations": [

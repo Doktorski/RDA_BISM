@@ -5,3 +5,10 @@ C:\Users\tokio\source\repos\RDA\RDA_BISM\obj\Development\RDA_BISM.smproj.CoreCom
 C:\Users\tokio\source\repos\RDA\RDA_BISM\obj\Development\Model.asdatabase
 C:\Users\tokio\source\repos\RDA\RDA_BISM\obj\Development\Model.deploymentoptions
 C:\Users\tokio\source\repos\RDA\RDA_BISM\obj\Development\Model.deploymenttargets
+C:\Users\tokio\source\repos\RDA_Project\RDA_BISM\RDA_BISM\bin\Model.asdatabase
+C:\Users\tokio\source\repos\RDA_Project\RDA_BISM\RDA_BISM\bin\Model.deploymenttargets
+C:\Users\tokio\source\repos\RDA_Project\RDA_BISM\RDA_BISM\bin\Model.deploymentoptions
+C:\Users\tokio\source\repos\RDA_Project\RDA_BISM\RDA_BISM\obj\Development\RDA_BISM.smproj.CoreCompileInputs.cache
+C:\Users\tokio\source\repos\RDA_Project\RDA_BISM\RDA_BISM\obj\Development\Model.asdatabase
+C:\Users\tokio\source\repos\RDA_Project\RDA_BISM\RDA_BISM\obj\Development\Model.deploymentoptions
+C:\Users\tokio\source\repos\RDA_Project\RDA_BISM\RDA_BISM\obj\Development\Model.deploymenttargets
