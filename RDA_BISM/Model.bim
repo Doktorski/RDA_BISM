@@ -25,6 +25,7 @@
             "name": "Agencija Key",
             "dataType": "int64",
             "isHidden": true,
+            "isKey": true,
             "sourceColumn": "Agencija Key",
             "sourceProviderType": "Integer"
           },
@@ -92,6 +93,7 @@
             "name": "Date Key",
             "dataType": "int64",
             "isHidden": true,
+            "isKey": true,
             "sourceColumn": "Date Key",
             "sourceProviderType": "Integer"
           },
@@ -232,6 +234,7 @@
             "name": "Grad Key",
             "dataType": "int64",
             "isHidden": true,
+            "isKey": true,
             "sourceColumn": "Grad Key",
             "sourceProviderType": "Integer"
           },
@@ -281,6 +284,7 @@
             "name": "Kompanija Key",
             "dataType": "int64",
             "isHidden": true,
+            "isKey": true,
             "sourceColumn": "Kompanija Key",
             "sourceProviderType": "Integer"
           },
@@ -336,6 +340,7 @@
             "name": "Narudzbenice Key",
             "dataType": "int64",
             "isHidden": true,
+            "isKey": true,
             "sourceColumn": "Narudzbenice Key",
             "sourceProviderType": "Integer"
           },
@@ -428,6 +433,7 @@
             "name": "Odbor Key",
             "dataType": "int64",
             "isHidden": true,
+            "isKey": true,
             "sourceColumn": "Odbor Key",
             "sourceProviderType": "Integer"
           },
@@ -483,6 +489,7 @@
             "name": "Privredna Grana Key",
             "dataType": "int64",
             "isHidden": true,
+            "isKey": true,
             "sourceColumn": "Privredna Grana Key",
             "sourceProviderType": "Integer"
           },
@@ -526,6 +533,7 @@
             "name": "Reklama Key",
             "dataType": "int64",
             "isHidden": true,
+            "isKey": true,
             "sourceColumn": "Reklama Key",
             "sourceProviderType": "Integer"
           },
@@ -630,6 +638,7 @@
             "name": "TV Kanali Key",
             "dataType": "int64",
             "isHidden": true,
+            "isKey": true,
             "sourceColumn": "TV Kanali Key",
             "sourceProviderType": "Integer"
           },
@@ -709,6 +718,7 @@
             "name": "Zaposleni Key",
             "dataType": "int64",
             "isHidden": true,
+            "isKey": true,
             "sourceColumn": "Zaposleni Key",
             "sourceProviderType": "Integer"
           },
