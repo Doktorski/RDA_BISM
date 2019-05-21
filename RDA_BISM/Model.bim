@@ -6,7 +6,7 @@
     "dataSources": [
       {
         "name": "SqlServer DELLMAMBA_17 RDA_DW",
-        "connectionString": "Provider=SQLNCLI11;Data Source=DELL\\MAMBA_17;Persist Security Info=false;User ID=sa;Initial Catalog=RDA_DW;Integrated Security=SSPI",
+        "connectionString": "Provider=SQLNCLI11;Data Source=DELL\\MAMBA_17;Persist Security Info=false;User ID=sa;Initial Catalog=RDA_DW",
         "impersonationMode": "impersonateAccount",
         "account": ".\\Aleksandar T",
         "annotations": [
@@ -377,11 +377,8 @@
           {
             "name": "Broj Narudzbenica",
             "dataType": "int64",
-            "isNullable": false,
             "sourceColumn": "Broj Narudzbenica",
-            "formatString": "0",
-            "sourceProviderType": "Integer",
-            "summarizeBy": "sum"
+            "sourceProviderType": "Integer"
           },
           {
             "name": "Pocetak Termina",
@@ -407,18 +404,6 @@
               "query": " SELECT [dbo].[Narudzbenica].* FROM [dbo].[Narudzbenica] ",
               "dataSource": "SqlServer DELLMAMBA_17 RDA_DW"
             }
-          }
-        ],
-        "measures": [
-          {
-            "name": "BrojNarudzbinaSveNedelje",
-            "expression": "CALCULATE(SUM(Narudzbenica[Broj Narudzbenica]), ALL(Datum[Nedelja U Godini]))",
-            "formatString": "#,###"
-          },
-          {
-            "name": "BrojNarudzbinaPoNedelji",
-            "expression": "CALCULATE(SUM(Narudzbenica[Broj Narudzbenica]), FILTER(Datum, Datum[Nedelja U Godini]))",
-            "formatString": "#,0"
           }
         ],
         "annotations": [
@@ -492,7 +477,7 @@
         ]
       },
       {
-        "name": "PrivrednaGrana",
+        "name": "Privredna Grana",
         "columns": [
           {
             "name": "Privredna Grana Key",
@@ -623,23 +608,6 @@
             }
           }
         ],
-        "measures": [
-          {
-            "name": "ProdajaReklama",
-            "expression": "CALCULATE(SUM(Reklama[Cena Reklame]), ALL(Datum[Nedelja U Godini]))",
-            "formatString": "#,0.00"
-          },
-          {
-            "name": "ProdajaReklamaPoNedelji",
-            "expression": "CALCULATE(SUM(Reklama[Cena Reklame]), FILTER(Datum, Datum[Nedelja U Godini] ))",
-            "formatString": "#,0.00"
-          },
-          {
-            "name": "ProdajaReklamaPoKvartalu",
-            "expression": "CALCULATE(SUM(Reklama[Cena Reklame]), FILTER(Datum, Datum[Kvartal]))",
-            "formatString": "0.00"
-          }
-        ],
         "annotations": [
           {
             "name": "_TM_ExtProp_QueryDefinition",
@@ -656,7 +624,7 @@
         ]
       },
       {
-        "name": "TvKanali",
+        "name": "TV Kanali",
         "columns": [
           {
             "name": "TV Kanali Key",
@@ -745,16 +713,21 @@
             "sourceProviderType": "Integer"
           },
           {
+            "name": "Nadredjeni Zaposleni Key",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Nadredjeni Zaposleni Key",
+            "sourceProviderType": "Integer"
+          },
+          {
             "name": "Ime Zaposlenog",
             "dataType": "string",
-            "isHidden": true,
             "sourceColumn": "Ime Zaposlenog",
             "sourceProviderType": "WChar"
           },
           {
             "name": "Prezime Zaposlenog",
             "dataType": "string",
-            "isHidden": true,
             "sourceColumn": "Prezime Zaposlenog",
             "sourceProviderType": "WChar"
           },
@@ -771,11 +744,10 @@
             "sourceProviderType": "WChar"
           },
           {
-            "type": "calculated",
-            "name": "Zaposleni",
+            "name": "Email Zasposlenog",
             "dataType": "string",
-            "isDataTypeInferred": true,
-            "expression": " CONCATENATE('Zaposleni'[Ime Zaposlenog],CONCATENATE( \" \", 'Zaposleni'[Prezime Zaposlenog]) )"
+            "sourceColumn": "Email Zasposlenog",
+            "sourceProviderType": "Char"
           }
         ],
         "partitions": [
@@ -807,81 +779,88 @@
     ],
     "relationships": [
       {
-        "name": "d49d0c69-bde5-466c-ba99-f031ea809f10",
-        "fromTable": "Reklama",
-        "fromColumn": "TV Kanali Key",
-        "toTable": "TvKanali",
-        "toColumn": "TV Kanali Key"
-      },
-      {
-        "name": "163e26b2-7ad6-485f-9576-c59d3874649e",
-        "fromTable": "Reklama",
-        "fromColumn": "Privredna GranaKey",
-        "toTable": "PrivrednaGrana",
-        "toColumn": "Privredna Grana Key"
-      },
-      {
-        "name": "77f9d434-a3eb-4b26-a7fb-7b7216fc2e0e",
-        "fromTable": "Reklama",
+        "name": "affbef04-be1a-4d74-a512-bd4b4d66e71d",
+        "fromTable": "Narudzbenica",
         "fromColumn": "Odbor Key",
         "toTable": "Odbor",
         "toColumn": "Odbor Key"
       },
       {
-        "name": "3851bc6c-68e7-4aff-a400-452a6adab6df",
+        "name": "28038353-afd2-4b45-ad4e-0bb9421d5d07",
         "fromTable": "Reklama",
         "fromColumn": "Kompanija Key",
         "toTable": "Kompanija",
         "toColumn": "Kompanija Key"
       },
       {
-        "name": "2d627d40-d1b4-467f-9eb6-ffed1724edb9",
+        "name": "666654ee-3d61-4a44-9c3b-35e13a42f419",
+        "fromTable": "Narudzbenica",
+        "fromColumn": "Kompanija Key",
+        "toTable": "Kompanija",
+        "toColumn": "Kompanija Key"
+      },
+      {
+        "name": "19233bb1-fbd4-4f5a-954a-4807df05872e",
+        "fromTable": "Narudzbenica",
+        "fromColumn": "Vreme Prikazivanja Key",
+        "toTable": "Datum",
+        "toColumn": "Date Key"
+      },
+      {
+        "name": "bef6f877-70ff-4cd3-a4c0-f19522bda4f9",
         "fromTable": "Reklama",
         "fromColumn": "Grad Key",
         "toTable": "Grad",
         "toColumn": "Grad Key"
       },
       {
-        "name": "41bda306-91f5-4253-9b59-44148fb18b27",
+        "name": "a121344d-0717-42cf-b28a-877803220478",
+        "fromTable": "Reklama",
+        "fromColumn": "Vreme Prikazivanja Key",
+        "toTable": "Datum",
+        "toColumn": "Date Key"
+      },
+      {
+        "name": "496ecd34-abf9-432f-9301-26238633ca23",
+        "fromTable": "Narudzbenica",
+        "fromColumn": "Grad Key",
+        "toTable": "Grad",
+        "toColumn": "Grad Key"
+      },
+      {
+        "name": "d459ee43-f0b7-40c8-8573-f1d06efb3d60",
+        "fromTable": "Reklama",
+        "fromColumn": "Agencija Key",
+        "toTable": "Agencija",
+        "toColumn": "Agencija Key"
+      },
+      {
+        "name": "09e3daa6-162e-45e5-ad52-86e8cce77e27",
+        "fromTable": "Reklama",
+        "fromColumn": "Odbor Key",
+        "toTable": "Odbor",
+        "toColumn": "Odbor Key"
+      },
+      {
+        "name": "1a05bb38-178b-4aa5-84b8-b8e3354c97f7",
+        "fromTable": "Reklama",
+        "fromColumn": "TV Kanali Key",
+        "toTable": "TV Kanali",
+        "toColumn": "TV Kanali Key"
+      },
+      {
+        "name": "dc8cb80d-ebcc-4076-9456-f84ecaa4aff0",
         "fromTable": "Narudzbenica",
         "fromColumn": "Zaposleni Key",
         "toTable": "Zaposleni",
         "toColumn": "Zaposleni Key"
       },
       {
-        "name": "4d9452ae-2aea-47e0-825f-03545b8ba15a",
-        "fromTable": "Narudzbenica",
-        "fromColumn": "Odbor Key",
-        "toTable": "Odbor",
-        "toColumn": "Odbor Key"
-      },
-      {
-        "name": "b9ece0ea-5f07-4715-8206-d999759c01cc",
-        "fromTable": "Narudzbenica",
-        "fromColumn": "Vreme Prikazivanja Key",
-        "toTable": "Datum",
-        "toColumn": "Date Key"
-      },
-      {
-        "name": "e2a2e756-9f4f-4fd6-aa15-f6176fa62165",
-        "fromTable": "Narudzbenica",
-        "fromColumn": "Kompanija Key",
-        "toTable": "Kompanija",
-        "toColumn": "Kompanija Key"
-      },
-      {
-        "name": "ecbf50ef-f0ba-4e1c-a181-31cc22257bfa",
+        "name": "c3e41c5d-e600-46a2-8896-43556ff1648f",
         "fromTable": "Reklama",
-        "fromColumn": "Vreme Prikazivanja Key",
-        "toTable": "Datum",
-        "toColumn": "Date Key"
-      },
-      {
-        "name": "353771c1-6f36-407c-a2ed-3a64f1b662dd",
-        "fromTable": "Reklama",
-        "fromColumn": "Agencija Key",
-        "toTable": "Agencija",
-        "toColumn": "Agencija Key"
+        "fromColumn": "Privredna GranaKey",
+        "toTable": "Privredna Grana",
+        "toColumn": "Privredna Grana Key"
       }
     ],
     "annotations": [

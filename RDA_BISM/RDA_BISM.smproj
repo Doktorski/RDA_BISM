@@ -15,7 +15,7 @@
     <DeploymentServerName>DELL\BUBI</DeploymentServerName>
     <DeploymentServerEdition>Developer</DeploymentServerEdition>
     <DeploymentServerVersion>Unknown</DeploymentServerVersion>
-    <DeploymentServerDatabase>RDA_BISM_DEV</DeploymentServerDatabase>
+    <DeploymentServerDatabase>RDA_BISM_DEV_2</DeploymentServerDatabase>
     <DeploymentServerCubeName>Model</DeploymentServerCubeName>
     <DeploymentOptionProcessing>DoNotProcess</DeploymentOptionProcessing>
     <DeploymentOptionTransactionalDeployment>False</DeploymentOptionTransactionalDeployment>
